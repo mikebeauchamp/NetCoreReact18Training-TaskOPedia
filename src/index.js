@@ -1,17 +1,51 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from "react-dom/client";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+function MainHeader() {
+  return <h1>React Course</h1>;
+}
+
+const subHeaderStyle = {
+  color: "blueviolet",
+  backgroundColor: "lightgray",
+};
+
+function SubHeader() {
+  return <p style={subHeaderStyle}>This is an exciting course!</p>;
+}
+
+function Header() {
+  return (
+    <div>
+      <MainHeader />
+      <SubHeader />
+    </div>
+  );
+}
+
+function MainBody() {
+  return (
+    <div>
+      <p>In this course, we will learn react js by building TaskOPedia!</p>
+      <ul>
+        <li>Call Ben</li>
+        <li>Go to Walmart</li>
+      </ul>
+    </div>
+  );
+}
+
+function Footer() {
+  return (
+    <p style={{ color: "gray", backgroundColor: "black" }}>Happy Coding!</p>
+  );
+}
+
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <div>
+    <Header />
+    <MainBody />
+    <Footer />
+  </div>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
